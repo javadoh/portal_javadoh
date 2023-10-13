@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head><title>Video Enseñanza</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="cabeceraCuerpo">
+<h1>VIDEO ENSEÑANZA PARA APRENDICES DE TODAS LAS EDADES</h1>
+<br><br><br><br>
+</div>
+
+<div id="contenidoPpal">
+<div id="theater">
+  <video id="video" src="http://upload.wikimedia.org/wikipedia/commons/7/79/Big_Buck_Bunny_small.ogv" width="70%" height="300" controls="false"></video>
+</div>
+<div id="mensajesLateral">
+<img src="imagenes/encuesta_post.png"/>
+<p>Mensaje 1: ¿Hola como estan?</p>
+<p>Mensaje 2: Muchas gracias.</p>
+<p>Mensaje 3: Estan buenos los videos.</p>
+<p>Mensaje 4: Desde Santiago centro.</p>
+</div>
+<p><b>Canvas video:</b></p><br>
+<canvas id="canvas"></canvas>
+<div id="tablaContenidos">
+<table id="tablaContenido" width="100%">
+<tr>
+<th>Contenido</th>
+<th>Descripción</th>
+<th></th>
+</tr>
+<tr>
+<td>Contenido 1</td>
+<td>de lo que se trate</td>
+<td><img src="imagenes/add_icon.png" width="16" height="16"></td>
+<td><img src="imagenes/reporte.png" width="16" height="16"></td>
+</tr>
+<tr>
+<td>Contenido 2</td>
+<td>de lo que se trate</td>
+<td><img src="imagenes/add_icon.png" width="16" height="16"></td>
+<td><img src="imagenes/reporte.png" width="16" height="16"></td>
+</tr>
+</table>
+</div>
+</div>
+</body>
+<script>
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+var video = document.getElementById('video');
+
+// set canvas size = video size when known
+video.addEventListener('loadedmetadata', function() {
+  canvas.width = 150;//video.videoWidth;
+  canvas.height = 100; //video.videoHeight;
+});
+
+video.addEventListener('play', function() {
+  var $this = this; //cache
+  (function loop() {
+    if (!$this.paused && !$this.ended) {
+      ctx.drawImage($this, 0, 0);
+      setTimeout(loop, 1000 / 30); // drawing at 30fps
+    }
+  })();
+}, 0);
+</script>
+</html>
