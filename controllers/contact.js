@@ -56,24 +56,22 @@ var id = req.params.id;
 
 
 //FUNCION DE AGREGAR MENSAJE DE LA WEB A MONGO
-exports.add = function (req, res){
+exports.add = async function (req, res){
   console.log("##### ENTRO EN ADD MESSAGE");
   res.header('Access-Control-Allow-Origin', "*");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
 
   console.log("REQUEST BODY: "+req.body);
-	ContactData.create(req.body, function (err, result) {
+	const addMessage = await ContactData.create(req.body).catch((error) => {
 		var message;
 
-    if (err) {
-		console.log(err);
+		console.log(error);
       // Some other error
       return res.status(500).send('No se pudo ingresar el mensaje. Lo sentimos.');
-	}
-    return res.send(202);
   });
-  
+    console.log(addMessage);
+    return res.send(202);
 };
 
 //FUNCION DE ELIMINAR MENSAJES POR _ID
