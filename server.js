@@ -40,11 +40,8 @@ process.on('SIGINT', function() {
 var app = express();
 
 try{
-app.configure(function(){
   app.use(cors());
   app.use(express.bodyParser());
-});
-
 //OBTENEMOS LOS MODELOS DE BD
 require('./models/contact');
 
