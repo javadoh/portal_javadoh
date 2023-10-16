@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'), 
-Schema = mongoose.Schema, 
-autoIncrement = require('mongoose-easy-auto-increment');//FUNCIONANDO OK
+Schema = mongoose.Schema;
+//,autoIncrement = require('mongoose-easy-auto-increment');//FUNCIONANDO OK
 
 mongoose.set('debug', true);
 
@@ -16,7 +16,7 @@ var ContactData = new Schema({
 
 console.log("Está en el model");
 
-ContactData.plugin(autoIncrement, {field: 'id', collection: 'webmsg_counter'});//FUNCIONA EXCELENTE
+//ContactData.plugin(autoIncrement, {field: 'id', collection: 'webmsg_counter'});//FUNCIONA EXCELENTE
 
 var ContactData = mongoose.model('ContactData', ContactData, 'webmsg');
 module.exports = ContactData;
