@@ -1,6 +1,7 @@
 var express = require('express'),
 mongoose = require('mongoose'),
 fs = require('fs');
+const BodyParser = require("body-parser");
 
 var mongoUri = 'mongodb://127.0.0.1/portal_pitutos';
 mongoose.connect(mongoUri);
@@ -40,8 +41,11 @@ process.on('SIGINT', function() {
 var app = express();
 
 try{
-  app.use(cors());
-  app.use(express.bodyParser());
+  //app.use(cors());
+  //app.use(express.bodyParser());
+  //SE AGREGA LIMIT POR EL ERROR AL SUBIR IMAGENES BASE 64
+app.use(BodyParser.json({limit: '5mb'}));
+app.use(BodyParser.urlencoded({limit: '5mb', extended: true}));
 //OBTENEMOS LOS MODELOS DE BD
 require('./models/contact');
 
