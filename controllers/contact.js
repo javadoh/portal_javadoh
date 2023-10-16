@@ -10,18 +10,15 @@ var db = mongoose.connection;
 mongoose.set('debug', true);
 
 
-exports.findAll = function(req, res){
+exports.findAll = async function(req, res){
   console.log('##### FIND ALL #####');
-  ContactData.find({},'id name email message',function(err, results){
+  const findAllMsg = await ContactData.find({},'id name email message').catch((error) => {
+    console.log(error);
+	return res.send(error);
+  });
   
-  if (err) {throw err;
-    console.log(err);
-	return res.send(err);}
-  
-  console.log(results);
-  return res.send(results);
-});
-
+  console.log(findAllMsg);
+  return res.send(findAllMsg);
 };
 
 //FUNCION DE ENCONTRAR MENSAJES POR ID DESDE LA WEB
