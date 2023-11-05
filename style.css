@@ -186,6 +186,7 @@ img{
 }
 .header-inner>img{
 	width: 120%;
+	max-height: 700px;
 }
 .header-overlay{
 	background-color: rgba(255, 255, 255, 0);
@@ -214,17 +215,17 @@ img{
 	line-height: 93px;
 }
 .header-btn-area{
-	margin-top: 90px;
+	margin-top: 1em;
 	float: left;
 	display: inline;
 	width: 100%;
 	text-align: center;
 }
 .header-btn-area a{
-	margin: 0px 15px;
+	margin: 0px 5px;
 }
 .knowmore-btn{
-	border: 2px solid #fff;
+	border: 1px solid #fff;
 	border-radius: 2px;
 	color: #fff;	
 	font-size: 20px;	
@@ -237,6 +238,8 @@ img{
 	-ms-transition: all 0.5s;
 	-o-transition: all 0.5s;
 	transition: all 0.5s;
+	background-color: black;
+	opacity: 0.8;
 }
 .download-btn{
 	border: 2px solid #fff;
@@ -2166,6 +2169,9 @@ img{
 
 
 @media(max-width:1199px ){
+	.rowbtn {
+		padding: 2em;
+	}
 	.header-content {  
       padding: 70px;  
 	}
@@ -2181,9 +2187,7 @@ img{
 	  font-size: 18px;  
 	  padding: 20px 25px;	  
 	}
-	.header-btn-area {
-	  margin-top: 12em;  
-	}
+	
 	.logo {
 	  margin-right: 0;	  
 	}
@@ -2275,9 +2279,7 @@ img{
 	  font-size: 16px;  
 	  padding: 18px 20px;	  
 	}
-	.header-btn-area {
-	  margin-top: 8em;
-	}
+
 	#navbar {
 	  width: 86%;
 	}
@@ -2390,28 +2392,39 @@ img{
 }
 
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 450px) and (min-width: 361px) {
     
 	.header-content h2 {
 	  font-size: 20px;
 	  line-height: 12px;
    }
+   .knowmore-btn {
+	font-size: 10px;
+	padding: 15px 18px;
+  }
 }
 
 
-@media(max-width:767px ){
+@media only screen and (max-width:767px ) and (min-width: 361px) {
+	.rowbtn {
+		padding: 2em;
+		width: 100%;
+	}
 	.header-content h2 {
 	  font-size: 24px;
 	  line-height: 20px;
-	  top: 6em;
+	  top: 2em;
+	}
+	.header-btn-area a {
+		display: block;
 	}
 	.header-content h2 span {
 	  font-weight: normal;
 	  line-height: 55px;
 	}
 	.knowmore-btn {
-	  font-size: 15px;
-	  padding: 15px 18px;
+	  font-size: 10px;
+	  padding: 6px 10px;
 	}
 	.download-btn {
 	  font-size: 15px;
@@ -2713,8 +2726,11 @@ img{
 
 
 @media(max-width:360px ){
+	.rowbtn {
+		padding: 0em;
+	}
 	.header-inner > img {
-	  height: 250px;
+	  height: 300px;
 	  width: 100%;
 	}
 	.header-content {
@@ -2727,9 +2743,6 @@ img{
 	.header-content h2 span {
 	  font-weight: normal;
 	  line-height: 15px;
-	}
-	.header-btn-area {
-	  margin-top: 12em;
 	}
 
 	.header-btn-area a {
@@ -2859,7 +2872,7 @@ img{
 	}
 	.header-content h2 {  
 	  margin-bottom: 10px;
-	  top: 6em;
+	  top: 1em;
 	}
 	.contact-left h2, .contact-right h2 {
 	  font-size: 20px;
@@ -2958,6 +2971,9 @@ img{
 
 
 @media(max-width:320px ){
+	.rowbtn {
+		padding: 0em;
+	}
 	.search-area input[type="text"]:focus {	 		
 		width: 210px;
 	}
@@ -3015,5 +3031,30 @@ img{
 	.popular-post-widget .media-body {
 	  text-align: center;	  
 	}
-	
+}
+
+@media only screen and (max-width: 1920px) and (min-width: 1199px)  {
+	.rowbtn {
+		padding: 2em;
+	}
+}
+
+@media only screen and (max-width: 570px) and (min-width: 361px)  {
+	.knowmore-btn {
+		font-size: 8px;
+		padding: 0px 0px;
+	}
+	.rowbtn {
+		padding: 2em;
+	}
+}
+
+.slick-slider {
+background-color: black;
+padding: 1em;
+opacity: 0.8;
+}
+
+.slick-track {
+	padding: 10px;
 }
