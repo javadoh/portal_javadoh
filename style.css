@@ -981,11 +981,12 @@ img{
 .single-item>img{
 	width: 100%;
     display: block;
-    height: 290px;
+    height: 350px;
     -webkit-transition: all 0.5s ease 0s;
 	-o-transition: all 0.5s ease 0s;
 	transition: all 0.5s ease 0s;
 }
+
 .single-item>img:hover{	
 	-webkit-transform: scale(1);	
 	    -ms-transform: scale(1);	
@@ -1073,6 +1074,17 @@ img{
 	color: #fff7f7;
 	font-size: 12px;
 	font-family: "Raleway",sans-serif;
+}
+
+.single-portfolio-hor {
+	width: 48%;
+    display: block;
+    height: 350px;
+	margin-left: 18px;
+	margin-bottom: 18px;
+    -webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0
 }
 
 /*--------------------*/
