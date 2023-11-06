@@ -981,6 +981,7 @@ img{
 	width: 100%;
 	position: relative;
 	overflow: hidden;
+	padding: 15px;
 }
 .single-item>img{
 	width: 100%;
